@@ -13,6 +13,8 @@
   --radius: 0.75rem;
   --success: hsl(142.1 76.2% 36.3%);
   --success-bg: hsl(142.1 70.6% 95.1%);
+  --warning: hsl(47.9 95.8% 53.1%);
+  --warning-bg: hsl(48 95.8% 95.1%);
   --neutral-bg: hsl(210 40% 96.1%);
   --neutral-fg: hsl(215.4 16.3% 46.9%);
 }
@@ -138,15 +140,18 @@ code {
 
 .status-badge {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
+  padding: 0.5rem 1rem;
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 500;
-  width: fit-content;
 }
 .status-success {
   background-color: var(--success-bg);
   color: var(--success);
+}
+.status-warning {
+  background-color: var(--warning-bg);
+  color: hsl(38.3 95.8% 33.1%);
 }
 .status-neutral {
   background-color: var(--neutral-bg);
