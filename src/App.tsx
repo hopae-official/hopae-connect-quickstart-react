@@ -1,5 +1,5 @@
-import { UserInfoCard } from "./ui/UserInfoCard";
 import { useHopaeConnect } from "./HopaeConnectProvider";
+import { UserInfoCard } from "./ui/UserInfoCard";
 
 function App() {
   const { verifiedUser, startVerification, isLoading } = useHopaeConnect();
@@ -17,9 +17,14 @@ function App() {
       {verifiedUser ? (
         // STATE 1: VERIFICATION COMPLETE
         <>
-          <h1 className="card-header">✅ Verification Successful</h1>
+          <div className="card-header-container">
+            <h1 className="card-header">✅ Verification Successful</h1>
+            <button onClick={startVerification} className="button button-secondary">
+              Verify Again
+            </button>
+          </div>
           <p className="card-description">
-            The user has been verified. Key claims from the <strong>/userinfo</strong> endpoint are displayed below.
+            Key claims from the <strong>/userinfo</strong> endpoint are displayed below, along with the full raw data.
           </p>
           <UserInfoCard profile={verifiedUser.profile} />
         </>
